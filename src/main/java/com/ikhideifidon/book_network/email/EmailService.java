@@ -20,6 +20,7 @@ import java.util.Map;
 @RequiredArgsConstructor
 public class EmailService {
 
+
     private final JavaMailSender mailSender;
     private final SpringTemplateEngine templateEngine;
 
