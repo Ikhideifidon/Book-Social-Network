@@ -24,15 +24,15 @@ public class RegistrationRequest {
     @NotBlank(message = "Last Name is mandatory")
     private String lastname;
 
-    @NotEmpty(message = "Email is mandatory")
-    @NotBlank(message = "Email is mandatory")
-    @Email(message = "Email is not valid")
+    @NotEmpty(message = "Invalid Email")
+    @NotBlank(message = "Invalid Email")
+    @Email(message = "Invalid Email")
     // todo This needs work
     private String email;
 
-    @NotEmpty(message = "Password is mandatory")
-    @NotBlank(message = "Password is mandatory")
-    @Size(min = 8, message = "Password should have at least 8 characters")
-    @ValidPassword(message = "Invalid Password")
+    @NotEmpty(message = "Password should be at least 8 characters long and include one uppercase letter, one lowercase letter, and one number.")
+    @NotBlank(message = "Password should be at least 8 characters long and include one uppercase letter, one lowercase letter, and one number.")
+    @Size(min = 8, message = "Password should be at least 8 characters long and include one uppercase letter, one lowercase letter, and one number.")
+    @ValidPassword(message = "Password should be at least 8 characters long and include one uppercase letter, one lowercase letter, and one number.")
     private String password;
 }

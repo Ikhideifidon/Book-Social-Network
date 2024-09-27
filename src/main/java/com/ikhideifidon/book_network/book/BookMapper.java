@@ -1,5 +1,6 @@
 package com.ikhideifidon.book_network.book;
 
+import com.ikhideifidon.book_network.file.FileUtils;
 import com.ikhideifidon.book_network.history.BookTransactionHistory;
 import org.springframework.stereotype.Service;
 
@@ -29,8 +30,7 @@ public class BookMapper {
                 .archived(book.isArchived())
                 .shareable(book.isShareable())
                 .owner(book.getOwner().fullName())
-                // todo: implement this later
-//                .cover()
+                .cover(FileUtils.readFileFromLocation(book.getBookCover()))
                 .build();
     }
 

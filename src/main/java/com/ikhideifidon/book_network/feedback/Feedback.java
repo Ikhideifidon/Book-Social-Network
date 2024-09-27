@@ -6,14 +6,14 @@ import jakarta.persistence.*;
 import lombok.*;
 import lombok.experimental.SuperBuilder;
 
+@Getter
+@Setter
 @Entity
 @Table(name = "feedback")
 @SuperBuilder
-@Getter
-@Setter
 @AllArgsConstructor
 @NoArgsConstructor
-public class FeedBack extends BaseEntity {
+public class Feedback extends BaseEntity {
 
     private Double note;
     private String comment;
