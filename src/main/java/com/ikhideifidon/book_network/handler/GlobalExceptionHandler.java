@@ -29,7 +29,6 @@ public class GlobalExceptionHandler {
                                 .businessErrorDescription(ACCOUNT_LOCKED.getDescription())
                                 .error(exp.getMessage())
                                 .build());
-
     }
 
     @ExceptionHandler(DisabledException.class)
@@ -42,7 +41,6 @@ public class GlobalExceptionHandler {
                                 .businessErrorDescription(ACCOUNT_DISABLED.getDescription())
                                 .error(exp.getMessage())
                                 .build());
-
     }
 
     @ExceptionHandler(BadCredentialsException.class)
@@ -55,7 +53,6 @@ public class GlobalExceptionHandler {
                                 .businessErrorDescription(BAD_CREDENTIALS.getDescription())
                                 .error(BAD_CREDENTIALS.getDescription())
                                 .build());
-
     }
 
     @ExceptionHandler(MessagingException.class)
@@ -66,7 +63,6 @@ public class GlobalExceptionHandler {
                         ExceptionResponse.builder()
                                 .error(exp.getMessage())
                                 .build());
-
     }
 
     @ExceptionHandler(MethodArgumentNotValidException.class)
@@ -83,7 +79,6 @@ public class GlobalExceptionHandler {
                         ExceptionResponse.builder()
                                 .validationErrors(errors)
                                 .build());
-
     }
 
     @ExceptionHandler(Exception.class)
@@ -98,7 +93,6 @@ public class GlobalExceptionHandler {
                                 .businessErrorDescription("Internal Error. Please contact the admin.")
                                 .error(exp.getMessage())
                                 .build());
-
     }
 
     @ExceptionHandler(OperationNotPermittedException.class)
@@ -109,6 +103,5 @@ public class GlobalExceptionHandler {
                         ExceptionResponse.builder()
                                 .error(exp.getMessage())
                                 .build());
-
     }
 }

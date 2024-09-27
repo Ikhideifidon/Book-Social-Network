@@ -1,7 +1,7 @@
 package com.ikhideifidon.book_network.book;
 
 import com.ikhideifidon.book_network.common.BaseEntity;
-import com.ikhideifidon.book_network.feedback.FeedBack;
+import com.ikhideifidon.book_network.feedback.Feedback;
 import com.ikhideifidon.book_network.history.BookTransactionHistory;
 import com.ikhideifidon.book_network.user.User;
 import jakarta.persistence.*;
@@ -33,7 +33,7 @@ public class Book extends BaseEntity {
     private User owner;
 
     @OneToMany(mappedBy = "book")
-    private List<FeedBack> feedBacks;
+    private List<Feedback> feedBacks;
 
     @OneToMany(mappedBy = "book")
     private List<BookTransactionHistory> historyList;
@@ -45,7 +45,7 @@ public class Book extends BaseEntity {
 
         double rate = this.feedBacks
                 .stream()
-                .mapToDouble(FeedBack::getNote)
+                .mapToDouble(Feedback::getNote)
                 .average()
                 .orElse(0.0);
         return Math.round(rate * 10) / 10.0;
